@@ -1,9 +1,21 @@
-/**
-* Template Name: iPortfolio - v3.7.0
-* Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
+function calculateAge(birthdate) {
+  const today = new Date();
+  const birthDate = new Date(birthdate);
+  let age = today.getFullYear() - birthDate.getFullYear();
+  const monthDiff = today.getMonth() - birthDate.getMonth();
+  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+    age--;
+  }
+  return age;
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  const birthdate = '2003-07-01'; // Your birthdate in YYYY-MM-DD format
+  document.getElementById('age').textContent = calculateAge(birthdate);
+});
+
+
+
 (function() {
   "use strict";
 
